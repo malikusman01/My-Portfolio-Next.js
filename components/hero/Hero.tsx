@@ -1,5 +1,7 @@
 import Link from "next/link";
 import ArchitectureFlow from "./ArchitectureFlow";
+import RoleRotator from "./RoleRotator";
+import LiveClock from "@/components/layout/LiveClock";
 
 export default function Hero() {
   return (
@@ -11,7 +13,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 text-lg text-ink-muted">
-            Software Engineer — Full-Stack, Systems, APIs, Infrastructure
+            <RoleRotator /> — Full-Stack, Systems, APIs, Infrastructure
           </p>
 
           <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-ink-muted">
@@ -43,9 +45,9 @@ export default function Hero() {
             </a>
           </div>
 
-          <p className="mt-8 flex items-center gap-2 text-sm text-ink-muted">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            Based in Islamabad — open to software engineering opportunities
+          <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-muted">
+            <LiveClock />
+            <span className="text-ink-faint">· open to software engineering opportunities</span>
           </p>
         </div>
 

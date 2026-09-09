@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LiveClock from "./LiveClock";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <p className="font-display text-sm text-ink">Usman Ali Awan</p>
           <p className="text-sm text-ink-muted mt-1">
-            Software Engineer — Islamabad, Pakistan
+            <LiveClock />
           </p>
         </div>
 

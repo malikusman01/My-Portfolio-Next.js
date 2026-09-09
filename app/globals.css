@@ -44,6 +44,17 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Architecture flow-line pulse — single orchestrated animation, respects reduced motion */
 @keyframes flow-pulse {
   0% {
