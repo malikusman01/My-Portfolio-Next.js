@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+  }
+
+  ::selection {
+    background-color: rgba(201, 168, 118, 0.25);
+    color: #F3F1EA;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C9A876;
+    outline-offset: 3px;
+  }
+
+  a, button {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+
+  .hairline {
+    @apply border-t border-border;
+  }
+}
+
+/* Architecture flow-line pulse — single orchestrated animation, respects reduced motion */
+@keyframes flow-pulse {
+  0% {
+    stroke-dashoffset: 24;
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.35;
+  }
+}
+
+.flow-line {
+  stroke-dasharray: 4 4;
+  animation: flow-pulse 3.2s linear infinite;
+}
+
+.flow-node {
+  transition: opacity 400ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .flow-line {
+    animation: none;
+    opacity: 0.5;
+  }
+
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
