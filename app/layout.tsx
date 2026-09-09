@@ -48,10 +48,36 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Usman Ali Awan",
+    jobTitle: "Software Engineer",
+    url: "https://usmanaliawan.dev",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Islamabad",
+      addressCountry: "PK",
+    },
+    worksFor: {
+      "@type": "Organization",
+      name: "RMRSCO Pvt Ltd",
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "COMSATS University Islamabad",
+    },
+    sameAs: ["https://linkedin.com/in/malik-usman-4607b6294"],
+  };
+
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
-        <a
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-accent focus:text-bg focus:px-4 focus:py-2 focus:rounded"
         >
