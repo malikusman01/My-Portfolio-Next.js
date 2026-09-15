@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Hero from "@/components/hero/Hero";
 import CredibilityStrip from "@/components/hero/CredibilityStrip";
-
-// add to the top imports:
 import Differentiator from "@/components/differentiator/Differentiator";
 import EngineeringPhilosophy from "@/components/philosophy/EngineeringPhilosophy";
 import EngineeringStack from "@/components/stack/EngineeringStack";
+import Reveal from "@/components/layout/Reveal";
+
 const teasers = [
   {
     href: "/work",
@@ -32,19 +32,20 @@ export default function Home() {
 
       <section className="container-page py-20 md:py-28">
         <div className="grid md:grid-cols-3 gap-6">
-          {teasers.map((teaser) => (
-            <Link
-              key={teaser.href}
-              href={teaser.href}
-              className="group border border-border rounded p-7 hover:border-border-strong"
-            >
-              <p className="font-display text-lg text-ink group-hover:text-accent">
-                {teaser.title}
-              </p>
-              <p className="mt-3 text-sm text-ink-muted leading-relaxed">
-                {teaser.description}
-              </p>
-            </Link>
+          {teasers.map((teaser, i) => (
+            <Reveal key={teaser.href} delay={i * 90}>
+              <Link
+                href={teaser.href}
+                className="group block h-full border border-border rounded p-7 transition-colors duration-200 hover:border-border-strong"
+              >
+                <p className="font-display text-lg text-ink group-hover:text-accent transition-colors duration-200">
+                  {teaser.title}
+                </p>
+                <p className="mt-3 text-sm text-ink-muted leading-relaxed">
+                  {teaser.description}
+                </p>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -54,4 +55,4 @@ export default function Home() {
       <EngineeringStack />
     </>
   );
-} 
+}

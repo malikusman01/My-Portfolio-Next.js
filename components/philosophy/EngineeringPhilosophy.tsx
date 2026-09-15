@@ -1,3 +1,5 @@
+import Reveal from "@/components/layout/Reveal";
+
 const principles = [
   {
     n: "01",
@@ -35,19 +37,23 @@ export default function EngineeringPhilosophy() {
   return (
     <section className="container-page py-20 md:py-28 hairline">
       <div className="pt-20 md:pt-28">
-        <h2 className="text-display-lg">How I engineer</h2>
+        <Reveal>
+          <h2 className="text-display-lg">How I engineer</h2>
+        </Reveal>
 
         <div className="mt-12 grid md:grid-cols-3 gap-x-10 gap-y-10">
-          {principles.map((p) => (
-            <div key={p.n} className="flex gap-4">
-              <span className="font-display text-sm text-accent pt-1">{p.n}</span>
-              <div>
-                <p className="font-display text-ink">{p.title}</p>
-                <p className="mt-1.5 text-sm text-ink-muted leading-relaxed max-w-[30ch]">
-                  {p.detail}
-                </p>
+          {principles.map((p, i) => (
+            <Reveal key={p.n} delay={i * 70}>
+              <div className="flex gap-4">
+                <span className="font-display text-sm text-accent pt-1">{p.n}</span>
+                <div>
+                  <p className="font-display text-ink">{p.title}</p>
+                  <p className="mt-1.5 text-sm text-ink-muted leading-relaxed max-w-[30ch]">
+                    {p.detail}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
