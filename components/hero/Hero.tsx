@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="container-page pt-12 pb-20 sm:pt-16 md:pt-24 md:pb-28">
       <div className="grid md:grid-cols-[1fr_auto] gap-14 md:gap-10 items-start">
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <HeroBackdrop3D />
 
           <div className="relative z-10">

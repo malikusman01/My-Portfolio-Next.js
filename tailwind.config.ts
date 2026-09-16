@@ -33,7 +33,7 @@ const config: Config = {
         body: ["var(--font-body)", "sans-serif"],
       },
       fontSize: {
-        "display-xl": ["clamp(2.75rem, 6vw, 5.5rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
+        "display-xl": ["clamp(2.25rem, 4.6vw, 4.25rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
         "display-lg": ["clamp(2.25rem, 4.2vw, 3.75rem)", { lineHeight: "1.05", letterSpacing: "-0.015em" }],
         "display-md": ["clamp(1.75rem, 2.8vw, 2.5rem)", { lineHeight: "1.1", letterSpacing: "-0.01em" }],
       },

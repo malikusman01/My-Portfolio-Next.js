@@ -101,12 +101,12 @@
 
 .hero-backdrop {
   position: absolute;
-  inset: -60px -20px auto -20px;
-  height: 480px;
+  inset: 0 -20px auto -20px;
+  height: 460px;
   z-index: 0;
   pointer-events: none;
-  overflow: visible;
-  opacity: 0.55;
+  overflow: hidden;
+  opacity: 0.85;
 }
 
 .hero-cube {
@@ -123,8 +123,8 @@
   position: absolute;
   width: 170px;
   height: 170px;
-  border: 1px solid rgba(201, 168, 118, 0.22);
-  background: rgba(201, 168, 118, 0.02);
+  border: 1px solid rgba(201, 168, 118, 0.4);
+  background: rgba(201, 168, 118, 0.06);
 }
 
 .face-front { transform: translateZ(85px); }
@@ -148,7 +148,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(201, 168, 118, 0.55);
+  background: rgba(201, 168, 118, 0.75);
   animation: node-float 9s ease-in-out infinite;
 }
 
