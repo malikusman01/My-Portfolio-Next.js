@@ -5,6 +5,7 @@ import Differentiator from "@/components/differentiator/Differentiator";
 import EngineeringPhilosophy from "@/components/philosophy/EngineeringPhilosophy";
 import EngineeringStack from "@/components/stack/EngineeringStack";
 import Reveal from "@/components/layout/Reveal";
+import TiltCard from "@/components/layout/TiltCard";
 
 const teasers = [
   {
@@ -34,17 +35,16 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6">
           {teasers.map((teaser, i) => (
             <Reveal key={teaser.href} delay={i * 90}>
-              <Link
-                href={teaser.href}
-                className="group block h-full border border-border rounded p-7 transition-colors duration-200 hover:border-border-strong"
-              >
-                <p className="font-display text-lg text-ink group-hover:text-accent transition-colors duration-200">
-                  {teaser.title}
-                </p>
-                <p className="mt-3 text-sm text-ink-muted leading-relaxed">
-                  {teaser.description}
-                </p>
-              </Link>
+              <TiltCard className="h-full border border-border rounded transition-colors duration-200 hover:border-border-strong">
+                <Link href={teaser.href} className="group block h-full p-7">
+                  <p className="font-display text-lg text-ink group-hover:text-accent transition-colors duration-200">
+                    {teaser.title}
+                  </p>
+                  <p className="mt-3 text-sm text-ink-muted leading-relaxed">
+                    {teaser.description}
+                  </p>
+                </Link>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

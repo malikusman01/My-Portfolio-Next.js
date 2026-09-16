@@ -1,4 +1,5 @@
 import Reveal from "@/components/layout/Reveal";
+import TiltCard from "@/components/layout/TiltCard";
 
 const softwareSide = ["Full-Stack", "APIs", "Business Logic"];
 const systemsSide = ["Infrastructure", "Networking", "Troubleshooting"];
@@ -19,14 +20,16 @@ export default function Differentiator() {
 
         <div className="mt-14 grid lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-0 items-center">
           <Reveal delay={80}>
-            <div className="border border-border rounded p-7 transition-colors duration-200 hover:border-border-strong">
-              <p className="text-xs text-ink-faint tracking-wide">Software</p>
-              <ul className="mt-4 space-y-2">
-                {softwareSide.map((item) => (
-                  <li key={item} className="text-ink">{item}</li>
-                ))}
-              </ul>
-            </div>
+            <TiltCard className="border border-border rounded transition-colors duration-200 hover:border-border-strong">
+              <div className="p-7">
+                <p className="text-xs text-ink-faint tracking-wide">Software</p>
+                <ul className="mt-4 space-y-2">
+                  {softwareSide.map((item) => (
+                    <li key={item} className="text-ink">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </TiltCard>
           </Reveal>
 
           <Reveal delay={160}>
@@ -38,14 +41,16 @@ export default function Differentiator() {
           </Reveal>
 
           <Reveal delay={240}>
-            <div className="border border-border rounded p-7 transition-colors duration-200 hover:border-border-strong">
-              <p className="text-xs text-ink-faint tracking-wide">IT Operations</p>
-              <ul className="mt-4 space-y-2">
-                {systemsSide.map((item) => (
-                  <li key={item} className="text-ink">{item}</li>
-                ))}
-              </ul>
-            </div>
+            <TiltCard className="border border-border rounded transition-colors duration-200 hover:border-border-strong">
+              <div className="p-7">
+                <p className="text-xs text-ink-faint tracking-wide">IT Operations</p>
+                <ul className="mt-4 space-y-2">
+                  {systemsSide.map((item) => (
+                    <li key={item} className="text-ink">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </TiltCard>
           </Reveal>
         </div>
       </div>

@@ -99,6 +99,76 @@
   animation: fadeInUp 450ms var(--ease-premium) both;
 }
 
+.hero-backdrop {
+  position: absolute;
+  inset: -60px -20px auto -20px;
+  height: 480px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0.55;
+}
+
+.hero-cube {
+  position: absolute;
+  top: 18%;
+  left: 6%;
+  width: 170px;
+  height: 170px;
+  transform-style: preserve-3d;
+  animation: cube-spin 28s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgba(201, 168, 118, 0.22);
+  background: rgba(201, 168, 118, 0.02);
+}
+
+.face-front { transform: translateZ(85px); }
+.face-back { transform: translateZ(-85px) rotateY(180deg); }
+.face-right { transform: rotateY(90deg) translateZ(85px); }
+.face-left { transform: rotateY(-90deg) translateZ(85px); }
+.face-top { transform: rotateX(90deg) translateZ(85px); }
+.face-bottom { transform: rotateX(-90deg) translateZ(85px); }
+
+@keyframes cube-spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.hero-node {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(201, 168, 118, 0.55);
+  animation: node-float 9s ease-in-out infinite;
+}
+
+.hero-node-1 { top: 8%; left: 52%; animation-delay: 0s; }
+.hero-node-2 { top: 52%; left: 68%; animation-delay: 1.5s; }
+.hero-node-3 { top: 72%; left: 38%; animation-delay: 3s; }
+.hero-node-4 { top: 28%; left: 80%; animation-delay: 4.5s; }
+.hero-node-5 { top: 58%; left: 14%; animation-delay: 6s; }
+
+@keyframes node-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(6px, -14px, 20px);
+    opacity: 0.9;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -142,6 +212,10 @@
   .flow-line {
     animation: none;
     opacity: 0.5;
+  }
+
+  .hero-backdrop {
+    display: none;
   }
 
   * {
