@@ -2,6 +2,7 @@ import Link from "next/link";
 import ArchitectureFlow from "./ArchitectureFlow";
 import RoleRotator from "./RoleRotator";
 import LiveClock from "@/components/layout/LiveClock";
+import MagneticButton from "@/components/layout/MagneticButton";
 
 export default function Hero() {
   return (
@@ -35,24 +36,28 @@ export default function Hero() {
             className="mt-10 flex flex-wrap items-center gap-4 animate-[fadeInUp_700ms_ease_both]"
             style={{ animationDelay: "260ms" }}
           >
-            <Link
-              href="/work"
-              className="rounded border border-ink/20 bg-ink px-5 py-2.5 text-sm font-medium text-bg transition-colors duration-200 hover:bg-ink/90"
-            >
-              Explore my work
-            </Link>
+            <MagneticButton>
+              <Link
+                href="/work"
+                className="rounded border border-ink/20 bg-ink px-5 py-2.5 text-sm font-medium text-bg transition-colors duration-200 hover:bg-ink/90"
+              >
+                Explore my work
+              </Link>
+            </MagneticButton>
+            <MagneticButton>
+              <a
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded border border-border px-5 py-2.5 text-sm text-ink transition-colors duration-200 hover:border-border-strong"
+              >
+                View GitHub
+              </a>
+            </MagneticButton>
             <a
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded border border-border px-5 py-2.5 text-sm text-ink transition-colors duration-200 hover:border-border-strong"
-            >
-              View GitHub
-            </a>
-            
               href="/resume-usman-ali-awan.pdf"
               className="text-sm text-ink-muted hover:text-ink underline underline-offset-4 transition-colors duration-200"
-            <a>
+            >
               Download resume
             </a>
           </div>
